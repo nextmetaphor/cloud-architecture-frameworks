@@ -1,0 +1,39 @@
+Class: "BestPracticeArea"
+References: [
+  { Class: "FrameworkPillar", ID: "operational-excellence", Relationship: "DEFINED_BY" },
+]
+Definitions:
+  prepare:
+    Fields:
+      OrderIndex: "1"
+      Name: "Prepare"
+      Description: "To prepare for operational excellence, you have to understand your workloads and their expected behaviors."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/prepare.html"
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "BestPracticeAreaGroup"
+        Definitions:
+          OPS04:
+            Fields:
+              OrderIndex: "1"
+              Name: "Design telemetry"
+              Description: "Design your workload so that it provides the information necessary for you to understand its internal state (for example, metrics, logs, events, and traces) across all components in support of observability and investigating issues."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/design-telemetry.html"
+          OPS05:
+            Fields:
+              OrderIndex: "2"
+              Name: "Design for operations"
+              Description: "Adopt approaches that improve the flow of changes into production and that enable refactoring, fast feedback on quality, and bug fixing."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/design-for-operations.html"
+          OPS06:
+            Fields:
+              OrderIndex: "3"
+              Name: "Mitigate deployment risks"
+              Description: "Adopt approaches that provide fast feedback on quality and enable rapid recovery from changes that do not have desired outcomes."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/mitigate-deployment-risks.html"
+          OPS07:
+            Fields:
+              OrderIndex: "4"
+              Name: "Operational readiness and change management"
+              Description: "Evaluate the operational readiness of your workload, processes, procedures, and personnel to understand the operational risks related to your workload."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operational-readiness.html"
