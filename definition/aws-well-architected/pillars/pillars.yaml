@@ -1,0 +1,46 @@
+Class: "FrameworkPillar"
+References: [
+  { Class: "CloudArchitecturalFramework", ID: "aws-well-architected-framework", Relationship: "PART_OF" },
+]
+Definitions:
+  operational-excellence:
+    Fields:
+      OrderIndex: "1"
+      Name: "Operational Excellence"
+      Description: "The Operational Excellence pillar includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html"
+
+  security:
+    Fields:
+      OrderIndex: "2"
+      Name: "Security"
+      Description: "The Security pillar includes the ability to protect data, systems, and assets to take advantage of cloud technologies to improve your security."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html"
+
+  reliability:
+    Fields:
+      OrderIndex: "3"
+      Name: "Reliability"
+      Description: "The Reliability pillar includes the ability of a workload to perform its intended function correctly and consistently when it’s expected to. This includes the ability to operate and test the workload through its total lifecycle."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+
+  performance-efficiency:
+    Fields:
+      OrderIndex: "4"
+      Name: "Performance Efficiency"
+      Description: "The Performance Efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html"
+
+  cost-optimization:
+    Fields:
+      OrderIndex: "5"
+      Name: "Cost Optimization"
+      Description: "The Cost Optimization pillar includes the ability to run systems to deliver business value at the lowest price point."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html"
+
+  sustainability:
+    Fields:
+      OrderIndex: "6"
+      Name: "Sustainability"
+      Description: "The Sustainability pillar includes the discipline of sustainability addresses the long-term environmental, economic, and societal impact of your business activities."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html"

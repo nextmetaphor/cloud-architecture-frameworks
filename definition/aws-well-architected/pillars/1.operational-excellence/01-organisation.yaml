@@ -1,0 +1,33 @@
+Class: "BestPracticeArea"
+References: [
+  { Class: "FrameworkPillar", ID: "operational-excellence", Relationship: "DEFINED_BY" },
+]
+Definitions:
+  organization:
+    Fields:
+      OrderIndex: "1"
+      Name: "Organization"
+      Description: "You need to understand your organization’s priorities, your organizational structure, and how your organization supports your team members, so that they can support your business outcomes."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/organization.html"
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "BestPracticeAreaGroup"
+        Definitions:
+          OPS01:
+            Fields:
+              OrderIndex: "1"
+              Name: "Organization priorities"
+              Description: "Your teams need to have a shared understanding of your entire workload, their role in it, and shared business goals to set the priorities that will enable business success."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/organization-priorities.html"
+          OPS02:
+            Fields:
+              OrderIndex: "2"
+              Name: "Operating model"
+              Description: "Your teams must understand their part in achieving business outcomes."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operating-model.html"
+          OPS03:
+            Fields:
+              OrderIndex: "3"
+              Name: "Organizational culture"
+              Description: "Provide support for your team members so that they can be more effective in taking action and supporting your business outcome."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/organizational-culture.html"

@@ -1,0 +1,21 @@
+Class: "BestPracticeArea"
+References: [
+  { Class: "FrameworkPillar", ID: "performance-efficiency", Relationship: "DEFINED_BY" },
+]
+Definitions:
+  selection:
+    Fields:
+      OrderIndex: "1"
+      Name: "Selection"
+      Description: "The optimal solution for a particular workload varies, and solutions often combine multiple approaches. Well-architected workloads use multiple solutions and enable different features to improve performance."
+      Link: "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/selection.html"
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "BestPracticeAreaGroup"
+        Definitions:
+          PERF01:
+            Fields:
+              OrderIndex: "1"
+              Name: "Performance architecture selection"
+              Description: "Often, multiple approaches are required to get optimal performance across a workload. Well-architected systems use multiple solutions and enable different features to improve performance."
+              Link: "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/performance-architecture-selection.html"

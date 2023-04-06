@@ -1,0 +1,31 @@
+Class:
+  CloudArchitecturalFramework:
+    MandatoryFields:
+      Name:
+      Description:
+      Link:
+    OptionalFields:
+
+  FrameworkPillar:
+    MandatoryFields:
+      Name:
+      Description:
+      Link:
+      OrderIndex:
+    OptionalFields:
+
+  BestPracticeArea:
+    MandatoryFields:
+      Name:
+      Description:
+      Link:
+      OrderIndex:
+    OptionalFields:
+
+  BestPracticeAreaGroup:
+    MandatoryFields:
+      Name:
+      Description:
+      Link:
+      OrderIndex:
+    OptionalFields:
