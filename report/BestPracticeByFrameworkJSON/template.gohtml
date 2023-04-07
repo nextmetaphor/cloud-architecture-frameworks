@@ -1,0 +1,77 @@
+[
+{{- $firstFramework := true -}}
+{{- range $framework := . }}
+    {{- if $firstFramework -}}
+        {{- $firstFramework = false -}}
+        {
+    {{- else -}}
+        ,{
+    {{- end }}
+    "ID": "{{$framework.ID | js}}",
+    "name": "{{index $framework.Fields "CloudArchitecturalFramework.Name" | js }}",
+    "description": "{{index $framework.Fields "CloudArchitecturalFramework.Description" | js }}",
+    "link": "{{index $framework.Fields "CloudArchitecturalFramework.Link" | js }}",
+    "pillars": [
+    {{- range $key,$value := $framework.CompositeSectionDefinitions -}}
+        {{- if eq $key "PART_OF" -}}
+            {{- $firstPillar := true -}}
+            {{- range $pillar := $value }}
+                {{- if $firstPillar -}}
+                    {{- $firstPillar = false -}}
+                    {
+                {{- else -}}
+                    ,{
+                {{- end }}
+                "ID": "{{$pillar.ID | js}}",
+                "name": "{{index $pillar.Fields "FrameworkPillar.Name" | js }}",
+                "description": "{{index $pillar.Fields "FrameworkPillar.Description" | js }}",
+                "link": "{{index $pillar.Fields "FrameworkPillar.Link" | js }}",
+                "areas": [
+                {{- range $key,$value := $pillar.CompositeSectionDefinitions -}}
+                    {{- if eq $key "DEFINED_BY" }}
+                        {{- $firstArea := true -}}
+                        {{- range $area := $value -}}
+                            {{- if $firstArea -}}
+                                {{- $firstArea = false -}}
+                                {
+                            {{- else -}}
+                                ,{
+                            {{- end }}
+                            "ID": "{{$area.ID | js}}",
+                            "name": "{{ index $area.Fields "BestPracticeArea.Name" | js}}",
+                            "description": "{{ index $area.Fields "BestPracticeArea.Description" | js}}",
+                            "link": "{{ index $area.Fields "BestPracticeArea.Link" | js}}",
+
+                            "areaGroups": [
+                            {{- range $key,$value := $area.CompositeSectionDefinitions -}}
+                                {{- if eq $key "GROUPED_BY" -}}
+                                    {{- $firstAreaGroup := true -}}
+                                    {{- range $areaGroup := $value -}}
+                                        {{- if $firstAreaGroup -}}
+                                            {{- $firstAreaGroup = false -}}
+                                            {
+                                        {{- else -}}
+                                            ,{
+                                        {{- end }}
+
+                                        "ID": "{{$areaGroup.ID | js}}",
+                                        "name": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Name" | js}}",
+                                        "description": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Description" | js}}",
+                                        "link": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Link" | js}}"
+                                        }
+                                    {{- end }}
+                                {{- end }}
+                            {{- end }}
+                            ]
+                        }
+                        {{- end }}
+                        ]
+                    {{- end -}}
+                {{- end -}}
+                }
+            {{- end -}}
+        {{- end -}}
+    {{- end }}
+    ]}
+{{- end }}
+]

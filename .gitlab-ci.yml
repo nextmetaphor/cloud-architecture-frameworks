@@ -1,0 +1,18 @@
+image: nextmetaphor/yaml-graph:latest
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+pages:
+  stage: deploy
+  script:
+    - sleep 20
+    - yaml-graph validate -s frameworks -f frameworks/definition-format.yml
+    - yaml-graph load -s frameworks
+    - yaml-graph report --fields report/BestPracticeByFrameworkJSON/fields.yaml --template report/BestPracticeByFrameworkJSON/template.gohtml > report/BestPracticeByFrameworkJSON/document.json
+    - cp report/BestPracticeByFrameworkJSON/document.json public/BestPracticeByFrameworkJSON.json
+
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

@@ -10,4 +10,5 @@ yaml-graph validate -s frameworks -f frameworks/definition-format.yml
 yaml-graph load -s frameworks 
 
 # generate reports
+yaml-graph report --fields report/BestPracticeByFrameworkJSON/fields.yaml --template report/BestPracticeByFrameworkJSON/template.gohtml > report/BestPracticeByFrameworkJSON/document.json
 ```

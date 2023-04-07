@@ -1,0 +1,22 @@
+SectionClass:
+  Class: "CloudArchitecturalFramework"
+  Fields: [ "ID", "Name", "Description", "Link" ]
+  OrderFields: [ "Name" ]
+CompositeSections:
+  - SectionClass:
+      Class: "FrameworkPillar"
+      Fields: [ "ID", "Name", "Description", "Link", "OrderIndex" ]
+      Relationship: "PART_OF"
+      OrderFields: [ "OrderIndex", "Name" ]
+    CompositeSections:
+      - SectionClass:
+          Class: "BestPracticeArea"
+          Fields: [ "ID", "Name", "Description", "Link", "OrderIndex" ]
+          Relationship: "DEFINED_BY"
+          OrderFields: [ "OrderIndex", "Name" ]
+        CompositeSections:
+          - SectionClass:
+              Class: "BestPracticeAreaGroup"
+              Fields: [ "ID", "Name", "Description", "Link", "OrderIndex" ]
+              Relationship: "GROUPED_BY"
+              OrderFields: [ "OrderIndex", "ID" ]
