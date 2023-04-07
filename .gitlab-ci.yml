@@ -5,8 +5,8 @@ pages:
   stage: deploy
   script:
     - sleep 20
-    - yaml-graph validate -s frameworks -f frameworks/definition-format.yml
-    - yaml-graph load -s frameworks
+    - yaml-graph validate -s definition -f definition/definition-format.yml
+    - yaml-graph load -s definition
     - yaml-graph report --fields report/BestPracticeByFrameworkJSON/fields.yaml --template report/BestPracticeByFrameworkJSON/template.gohtml > report/BestPracticeByFrameworkJSON/document.json
     - cp report/BestPracticeByFrameworkJSON/document.json public/BestPracticeByFrameworkJSON.json
 
