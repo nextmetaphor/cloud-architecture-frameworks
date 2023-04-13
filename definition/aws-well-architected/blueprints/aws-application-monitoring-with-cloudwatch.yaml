@@ -1,0 +1,17 @@
+Class: "Blueprint"
+Definitions:
+  terraform-azure-storage-account:
+    Fields:
+      Name: "Terraform module to create an Azure storage account."
+      Description: "Terraform module to create an Azure storage account."
+      Link: "https://github.com/nextmetaphor/terraform-azure-storage-account"
+
+    FileFields:
+      ImgSrc: { Prefix: "data:image/jpeg;base64,", Path: "terraform-azure-storage-account.jpg", Encoding: "base64" }
+
+    References: [
+      { Class: "ServiceConfiguration", ID: "azure-file-storage-nfs", Relationship: "COMPOSED_OF" },
+      { Class: "BlueprintSubcategory", ID: "micro", Relationship: "BELONGS_TO" },
+      { Class: "BlueprintType", ID: "reference-architecture", Relationship: "TYPE_OF" },
+      { Class: "BlueprintType", ID: "implementation", Relationship: "TYPE_OF" },
+    ]

@@ -20,3 +20,26 @@ CompositeSections:
               Fields: [ "ID", "Name", "Description", "Link", "OrderIndex" ]
               Relationship: "GROUPED_BY"
               OrderFields: [ "OrderIndex", "ID" ]
+            CompositeSections:
+              - SectionClass:
+                  Class: "BestPractice"
+                  Fields: [ "ID", "Name", "Description", "Link", "OrderIndex" ]
+                  Relationship: "DEMONSTRATED_BY"
+                  OrderFields: [ "OrderIndex", "ID" ]
+                CompositeSections:
+                  - SectionClass:
+                      Class: "Blueprint"
+                      Fields: [ "Name", "Description", "Link", "ImgSrc" ]
+                      Relationship: "ADHERES_TO"
+                      OrderFields: [ "Name" ]
+                    CompositeSections:
+                      - SectionClass:
+                          Class: "ServiceConfiguration"
+                          Fields: [ "Name", "Description", "Link", "ImgSrc" ]
+                          Relationship: "COMPOSED_OF"
+                          OrderFields: [ "Name" ]
+                        AggregateClasses:
+                          - Class: "Service"
+                            Fields: [ "Name", "Description", "Link", "ImgSrc" ]
+                            Relationship: "CONFIGURED_IN"
+                            OrderFields: [ "Name" ]

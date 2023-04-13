@@ -19,6 +19,18 @@ Definitions:
               Name: "Design telemetry"
               Description: "Design your workload so that it provides the information necessary for you to understand its internal state (for example, metrics, logs, events, and traces) across all components in support of observability and investigating issues."
               Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/design-telemetry.html"
+            SubDefinitions:
+              DEMONSTRATED_BY:
+                Class: "BestPractice"
+                Definitions:
+                  OPS04-BP01:
+                    Fields:
+                      OrderIndex: "1"
+                      Name: "Implement application telemetry"
+                      Description: "Application telemetry is the foundation for observability of your workload. Your application should emit telemetry that provides insight into the state of the application and the achievement of business outcomes. From troubleshooting to measuring the impact of a new feature, application telemetry informs the way you build, operate, and evolve your workload."
+                      Link: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_telemetry_application_telemetry.html"
+
+
           OPS05:
             Fields:
               OrderIndex: "2"

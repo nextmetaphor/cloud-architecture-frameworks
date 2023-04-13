@@ -57,7 +57,35 @@
                                         "ID": "{{$areaGroup.ID | js}}",
                                         "name": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Name" | js}}",
                                         "description": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Description" | js}}",
-                                        "link": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Link" | js}}"
+                                        "link": "{{ index $areaGroup.Fields "BestPracticeAreaGroup.Link" | js}}",
+                                        "bestPractices": [
+
+                                        {{- range $key,$value := $areaGroup.CompositeSectionDefinitions -}}
+                                            {{- if eq $key "DEMONSTRATED_BY" -}}
+                                                {{- $firstBestPractice := true -}}
+                                                {{- range $bestPractice := $value -}}
+                                                    {{- if $firstBestPractice -}}
+                                                        {{- $firstBestPractice = false -}}
+                                                        {
+                                                    {{- else -}}
+                                                        ,{
+                                                    {{- end }}
+
+                                                    "ID": "{{$bestPractice.ID | js}}",
+                                                    "name": "{{ index $bestPractice.Fields "BestPractice.Name" | js}}",
+                                                    "description": "{{ index $bestPractice.Fields "BestPractice.Description" | js}}",
+                                                    "link": "{{ index $bestPractice.Fields "BestPractice.Link" | js}}",
+                                                    "blueprints": [
+
+                                                    ]
+
+                                                    }
+                                                {{- end }}
+                                            {{- end }}
+                                        {{- end }}
+
+                                        ]
+
                                         }
                                     {{- end }}
                                 {{- end }}
